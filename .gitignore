@@ -1,0 +1,8 @@
+# Entries for IntelliJ
+.idea/
+**iml
+out/
+
+# Entries for Gradle
+.gradle/
+build/
