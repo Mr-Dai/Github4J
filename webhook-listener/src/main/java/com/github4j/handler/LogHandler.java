@@ -10,7 +10,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.Enumeration;
-import java.util.stream.Collectors;
 
 public class LogHandler extends AbstractHandler {
     private static final Logger LOG = LoggerFactory.getLogger(LogHandler.class);
@@ -26,9 +25,15 @@ public class LogHandler extends AbstractHandler {
             String headerName = headerNames.nextElement();
             builder.append(System.lineSeparator()).append(headerName).append(": ").append(request.getHeader(headerName));
         }
-        if (request.getContentLength() > 0)
-            builder.append(System.lineSeparator()).append(System.lineSeparator())
-                    .append(request.getReader().lines().collect(Collectors.joining(System.lineSeparator())));
-        LOG.info("\n{}", builder.toString());
+        if (request.getContentLength() > 0) {
+            builder.append(System.lineSeparator()).append(System.lineSeparator());
+            while (true) {
+                String line = request.getReader().readLine();
+                if (line == null)
+                    break;
+                builder.append(line).append(System.lineSeparator());
+            }
+        }
+        LOG.info("==================\n{}\n==================", builder.toString());
     }
 }

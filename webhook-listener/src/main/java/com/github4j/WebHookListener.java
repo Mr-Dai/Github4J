@@ -2,6 +2,7 @@ package com.github4j;
 
 import com.github4j.event.GithubEvent;
 import com.github4j.handler.GithubEventHandler;
+import com.github4j.handler.HelloHandler;
 import com.github4j.handler.LogHandler;
 import com.github4j.listener.EventListener;
 import org.eclipse.jetty.server.Server;
@@ -35,6 +36,7 @@ public class WebHookListener {
         for (Map.Entry<Class<? extends GithubEvent>, List<EventListener>> entry : listeners.entrySet())
             newListeners.put(entry.getKey(), Collections.unmodifiableList(entry.getValue()));
         handlers.addHandler(new GithubEventHandler(host, path, Collections.unmodifiableMap(newListeners)));
+        handlers.addHandler(new HelloHandler("Message received!"));
         server.setHandler(handlers);
 
         server.start();
