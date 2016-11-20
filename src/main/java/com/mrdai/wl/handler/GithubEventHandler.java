@@ -1,6 +1,6 @@
 package com.mrdai.wl.handler;
 
-import com.mrdai.wl.event.GithubEvent;
+import com.github4j.event.GithubEvent;
 import com.mrdai.wl.listener.EventListener;
 import org.eclipse.jetty.server.Request;
 import org.eclipse.jetty.server.handler.AbstractHandler;

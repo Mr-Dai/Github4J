@@ -1,6 +1,6 @@
 package com.mrdai.wl;
 
-import com.mrdai.wl.event.GithubEvent;
+import com.github4j.event.GithubEvent;
 import com.mrdai.wl.handler.GithubEventHandler;
 import com.mrdai.wl.handler.LogHandler;
 import com.mrdai.wl.listener.EventListener;

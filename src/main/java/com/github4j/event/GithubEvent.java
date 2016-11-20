@@ -1,4 +1,4 @@
-package com.mrdai.wl.event;
+package com.github4j.event;
 
 public class GithubEvent {
 }
