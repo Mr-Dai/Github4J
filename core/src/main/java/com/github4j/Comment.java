@@ -5,7 +5,6 @@ import org.joda.time.LocalDateTime;
 public class Comment {
     private int id;
     private String url;
-    private String htmlUrl;
     private String body;
     private String path;
     private int position;
@@ -20,8 +19,6 @@ public class Comment {
     public void setId(int id) { this.id = id; }
     public String getUrl() { return url; }
     public void setUrl(String url) { this.url = url; }
-    public String getHtmlUrl() { return htmlUrl; }
-    public void setHtmlUrl(String htmlUrl) { this.htmlUrl = htmlUrl; }
     public String getBody() { return body; }
     public void setBody(String body) { this.body = body; }
     public String getPath() { return path; }
