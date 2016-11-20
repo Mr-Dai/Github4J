@@ -1,9 +1,9 @@
-package com.mrdai.wl;
+package com.github4j;
 
 import com.github4j.event.GithubEvent;
-import com.mrdai.wl.handler.GithubEventHandler;
-import com.mrdai.wl.handler.LogHandler;
-import com.mrdai.wl.listener.EventListener;
+import com.github4j.handler.GithubEventHandler;
+import com.github4j.handler.LogHandler;
+import com.github4j.listener.EventListener;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.server.handler.HandlerCollection;
 

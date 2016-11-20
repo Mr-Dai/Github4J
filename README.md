@@ -1,2 +1,3 @@
-# Webhook-Listener
-Groovy scripts listening to Github Webhook
+# Github4J
+
+Github-related libraries for Java.

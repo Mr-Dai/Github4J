@@ -1,4 +1,4 @@
-package com.mrdai.wl.listener;
+package com.github4j.listener;
 
 import com.github4j.event.GithubEvent;
 
