@@ -6,3 +6,4 @@ out/
 # Entries for Gradle
 .gradle/
 build/
+gradle.properties

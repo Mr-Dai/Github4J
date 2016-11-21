@@ -25,15 +25,6 @@ public class LogHandler extends AbstractHandler {
             String headerName = headerNames.nextElement();
             builder.append(System.lineSeparator()).append(headerName).append(": ").append(request.getHeader(headerName));
         }
-        if (request.getContentLength() > 0) {
-            builder.append(System.lineSeparator()).append(System.lineSeparator());
-            while (true) {
-                String line = request.getReader().readLine();
-                if (line == null)
-                    break;
-                builder.append(line).append(System.lineSeparator());
-            }
-        }
         LOG.info("==================\n{}\n==================", builder.toString());
     }
 }

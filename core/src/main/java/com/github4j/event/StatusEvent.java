@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * Triggered when the status of a Git commit changes.
  */
-public class StatusEvent {
+public class StatusEvent extends GithubEvent {
     private int id;
     private String sha;
     private String name;
