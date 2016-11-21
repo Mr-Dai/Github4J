@@ -1,10 +1,9 @@
 package com.github4j.event;
 
 import com.github4j.Organization;
-import com.github4j.git.GitCommit;
-import com.github4j.git.GitUser;
 import com.github4j.Repository;
 import com.github4j.User;
+import com.github4j.git.GitUser;
 import org.joda.time.DateTime;
 
 import java.util.List;
@@ -13,7 +12,7 @@ import java.util.List;
  * Triggered when a repository branch is pushed to.
  * In addition to branch pushes, webhook push events are also triggered when repository tags are pushed.
  */
-public class PushEvent {
+public class PushEvent extends GithubEvent {
     private String ref;
     private String before;
     private String after;

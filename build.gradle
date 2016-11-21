@@ -4,6 +4,19 @@ version '0.1'
 allprojects {
     apply plugin: 'maven'
     apply plugin: 'idea'
+
+    uploadArchives {
+        repositories {
+            mavenDeployer {
+                repository(url: "${releaseDeployUrl}") {
+                    authentication(userName: deployUsername, password: deployPassword)
+                }
+                snapshotRepository(url: "${snapshotDeployUrl}") {
+                    authentication(userName: deployUsername, password: deployPassword)
+                }
+            }
+        }
+    }
 }
 
 subprojects {
