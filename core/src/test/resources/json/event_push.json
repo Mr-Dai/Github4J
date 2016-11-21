@@ -1,0 +1,128 @@
+{
+  "ref": "refs/heads/master",
+  "before": "de3623022299ecdb16b23dfe7fdd976a12a8e602",
+  "after": "9e17ab5be10061c728596e0cd3fa785216237073",
+  "created": false,
+  "deleted": false,
+  "forced": false,
+  "base_ref": null,
+  "compare": "https://github.com/WeTrack/WeTrack-Backend/compare/de3623022299...9e17ab5be100",
+  "commits": [
+    {
+      "id": "9e17ab5be10061c728596e0cd3fa785216237073",
+      "tree_id": "1c1d11ff53577f533b7f66ea33775dda3f9d1fa8",
+      "distinct": true,
+      "message": "Updated Gson field naming policy to use JSON standard naming convention",
+      "timestamp": "2016-11-21T11:06:31+08:00",
+      "url": "https://github.com/WeTrack/WeTrack-Backend/commit/9e17ab5be10061c728596e0cd3fa785216237073",
+      "author": {
+        "name": "Robert Peng",
+        "email": "robert.peng@foxmail.com",
+        "username": "Mr-Dai"
+      },
+      "committer": {
+        "name": "Robert Peng",
+        "email": "robert.peng@foxmail.com",
+        "username": "Mr-Dai"
+      },
+      "added": [
+
+      ],
+      "removed": [
+
+      ],
+      "modified": [
+        "README.md",
+        "src/main/java/com/wetrack/config/SpringConfig.java",
+        "src/main/java/com/wetrack/model/CreatedMessage.java",
+        "src/main/java/com/wetrack/model/Message.java",
+        "src/test/java/com/wetrack/dao/morphia/UserTokenRepositoryTest.java",
+        "src/test/java/com/wetrack/service/user/UserPasswordUpdateTest.java"
+      ]
+    }
+  ],
+  "head_commit": {
+    "id": "9e17ab5be10061c728596e0cd3fa785216237073",
+    "tree_id": "1c1d11ff53577f533b7f66ea33775dda3f9d1fa8",
+    "distinct": true,
+    "message": "Updated Gson field naming policy to use JSON standard naming convention",
+    "timestamp": "2016-11-21T11:06:31+08:00",
+    "url": "https://github.com/WeTrack/WeTrack-Backend/commit/9e17ab5be10061c728596e0cd3fa785216237073",
+    "author": {
+      "name": "Robert Peng",
+      "email": "robert.peng@foxmail.com",
+      "username": "Mr-Dai"
+    },
+    "committer": {
+      "name": "Robert Peng",
+      "email": "robert.peng@foxmail.com",
+      "username": "Mr-Dai"
+    },
+    "added": [
+
+    ],
+    "removed": [
+
+    ],
+    "modified": [
+      "README.md",
+      "src/main/java/com/wetrack/config/SpringConfig.java",
+      "src/main/java/com/wetrack/model/CreatedMessage.java",
+      "src/main/java/com/wetrack/model/Message.java",
+      "src/test/java/com/wetrack/dao/morphia/UserTokenRepositoryTest.java",
+      "src/test/java/com/wetrack/service/user/UserPasswordUpdateTest.java"
+    ]
+  },
+  "repository": {
+    "id": 69036077,
+    "name": "WeTrack-Backend",
+    "full_name": "WeTrack/WeTrack-Backend",
+    "owner": {
+      "name": "WeTrack",
+      "email": ""
+    },
+    "private": false,
+    "description": "Java Backend project for WeTrack",
+    "fork": false,
+    "created_at": 1474643611,
+    "updated_at": "2016-11-04T13:38:19Z",
+    "pushed_at": 1479697634,
+    "homepage": "",
+    "size": 315,
+    "stargazers_count": 0,
+    "watchers_count": 0,
+    "language": "Java",
+    "has_issues": true,
+    "has_downloads": true,
+    "has_wiki": true,
+    "has_pages": false,
+    "forks_count": 0,
+    "mirror_url": null,
+    "open_issues_count": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "watchers": 0,
+    "default_branch": "master",
+    "stargazers": 0,
+    "master_branch": "master",
+    "organization": "WeTrack"
+  },
+  "pusher": {
+    "name": "Mr-Dai",
+    "email": "robert.peng@foxmail.com"
+  },
+  "organization": {
+    "login": "WeTrack",
+    "id": 23261046,
+    "avatar_url": "https://avatars.githubusercontent.com/u/23261046?v=3",
+    "description": ""
+  },
+  "sender": {
+    "login": "Mr-Dai",
+    "id": 6038522,
+    "avatar_url": "https://avatars.githubusercontent.com/u/6038522?v=3",
+    "gravatar_id": "",
+    "type": "User",
+    "site_admin": false
+  }
+}

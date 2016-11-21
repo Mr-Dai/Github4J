@@ -1,0 +1,22 @@
+{
+  "sha": "fe554a5d570891a6eddb13f5b254e4591e11b13f",
+  "author": {
+    "name": "Robert Peng",
+    "email": "robert.peng@foxmail.com",
+    "date": "2016-11-20T04:12:05Z"
+  },
+  "committer": {
+    "name": "Robert Peng",
+    "email": "robert.peng@foxmail.com",
+    "date": "2016-11-20T04:12:05Z"
+  },
+  "tree": {
+    "sha": "2212b7291efab9d4850348c40e0b765525208ed5"
+  },
+  "message": "Initialized project",
+  "parents": [
+    {
+      "sha": "39626b3d77b0bfebf48dd08ea88aebe426a1e76f"
+    }
+  ]
+}

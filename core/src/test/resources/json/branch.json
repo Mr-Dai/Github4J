@@ -1,0 +1,44 @@
+{
+  "name": "master",
+  "commit": {
+    "sha": "7b250c690f22f0fee9b13b6c77b29ee652b433f9",
+    "commit": {
+      "author": {
+        "name": "Robert Peng",
+        "email": "robert.peng@foxmail.com",
+        "date": "2016-11-20T12:10:58Z"
+      },
+      "committer": {
+        "name": "Robert Peng",
+        "email": "robert.peng@foxmail.com",
+        "date": "2016-11-20T12:11:53Z"
+      },
+      "message": "Upgraded listener module.\n\nThe listener is now deployed on server for testing and data collection.",
+      "tree": {
+        "sha": "75b807284fb2d58d9fe7f40733d3effa1c001854"
+      },
+      "comment_count": 2
+    },
+    "author": {
+      "login": "Mr-Dai",
+      "id": 6038522,
+      "avatar_url": "https://avatars.githubusercontent.com/u/6038522?v=3",
+      "gravatar_id": "",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "Mr-Dai",
+      "id": 6038522,
+      "avatar_url": "https://avatars.githubusercontent.com/u/6038522?v=3",
+      "gravatar_id": "",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "6a0d4aa1b398dc77a9f2440ae85a47a722139ba6"
+      }
+    ]
+  }
+}

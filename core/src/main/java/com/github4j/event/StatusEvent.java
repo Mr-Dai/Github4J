@@ -1,9 +1,6 @@
 package com.github4j.event;
 
-import com.github4j.Branch;
-import com.github4j.Commit;
-import com.github4j.Repository;
-import com.github4j.User;
+import com.github4j.*;
 import org.joda.time.LocalDateTime;
 
 import java.util.List;
@@ -24,6 +21,7 @@ public class StatusEvent {
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
     private Repository repository;
+    private Organization organization;
     private User sender;
 
     public int getId() { return id; }
@@ -50,6 +48,8 @@ public class StatusEvent {
     public void setUpdatedAt(LocalDateTime updatedAt) { this.updatedAt = updatedAt; }
     public Repository getRepository() { return repository; }
     public void setRepository(Repository repository) { this.repository = repository; }
+    public Organization getOrganization() { return organization; }
+    public void setOrganization(Organization organization) { this.organization = organization; }
     public User getSender() { return sender; }
     public void setSender(User sender) { this.sender = sender; }
 

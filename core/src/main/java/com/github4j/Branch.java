@@ -1,5 +1,6 @@
 package com.github4j;
 
+import com.github4j.git.GitCommit;
 import com.google.gson.annotations.SerializedName;
 
 public class Branch {
