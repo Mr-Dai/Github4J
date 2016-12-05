@@ -1,4 +1,4 @@
-package com.github4j.handler;
+package com.github4j.webhook.handler;
 
 import org.eclipse.jetty.server.Request;
 import org.eclipse.jetty.server.handler.AbstractHandler;

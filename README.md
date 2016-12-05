@@ -11,7 +11,7 @@ Module `core`:
 
 Module `webhook`:
 
-- [ ] Implement `EventListener` dynamic registration for Java and Groovy files.
+- [ ] Implement `EventListener` dynamic registration for `.groovy`, `.gy`, `.java`, `.class` and `.jar` files.
 
 Whole project:
 

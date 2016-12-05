@@ -1,11 +1,11 @@
-package com.github4j.handler;
+package com.github4j.webhook.handler;
 
 import com.github4j.event.GithubEvent;
 import com.github4j.event.PingEvent;
 import com.github4j.event.PushEvent;
 import com.github4j.event.StatusEvent;
 import com.github4j.json.GithubGson;
-import com.github4j.listener.EventListener;
+import com.github4j.webhook.listener.EventListener;
 import com.google.gson.Gson;
 import com.google.gson.JsonSyntaxException;
 import org.apache.commons.codec.digest.HmacUtils;
@@ -108,7 +108,7 @@ public class GithubEventHandler extends AbstractHandler {
 
         // Examine HMAC
         String receivedHmac = request.getHeader(SIGNATURE_HEADER);
-        if (!isBlank(receivedHmac) && receivedHmac.startsWith("sha1=")) {
+        if (!secret.isEmpty() && !isBlank(receivedHmac) && receivedHmac.startsWith("sha1=")) {
             receivedHmac = receivedHmac.substring(5);
             LOG.info("Received HMAC {}.", receivedHmac);
             String computedHmac;

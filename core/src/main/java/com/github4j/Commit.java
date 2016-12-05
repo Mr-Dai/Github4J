@@ -6,7 +6,7 @@ import com.google.gson.annotations.SerializedName;
 import java.util.List;
 
 /**
- * A Github commit, which is not the same as a {@link com.github4j.git.GitCommit GitCommit}.
+ * A Github commit, which is not the same as a {@link GitCommit GitCommit}.
  * <p>
  * URL format:
  * <pre>

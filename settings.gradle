@@ -1,7 +1,9 @@
 rootProject.name = 'parent'
 include 'github4j-core'
 include 'github4j-webhook'
+include 'github4j-webhook-standalone'
 
 project(':github4j-core').projectDir = "$rootDir/core" as File
 project(':github4j-webhook').projectDir = "$rootDir/webhook" as File
+project(':github4j-webhook-standalone').projectDir = "$rootDir/webhook-standalone" as File
 
