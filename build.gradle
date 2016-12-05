@@ -2,12 +2,9 @@ allprojects {
     apply plugin: 'maven'
     apply plugin: 'idea'
 
-<<<<<<< HEAD
     group 'com.github4j'
     version '0.1-SNAPSHOT'
 
-=======
->>>>>>> 47b13cff6019e8d2b1432890c78c89df93f19fa4
     uploadArchives {
         repositories {
             mavenDeployer {

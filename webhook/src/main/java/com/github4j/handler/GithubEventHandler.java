@@ -163,17 +163,24 @@ public class GithubEventHandler extends AbstractHandler {
         }
 
         final List<EventListener> matchedListeners = listeners.get(eventType);
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                for (EventListener listener : matchedListeners)
-                    listener.handle(event);
-            }
-        }).start();
+        if (matchedListeners != null && !matchedListeners.isEmpty()) {
+            new Thread(new Runnable() {
+                @Override
+                @SuppressWarnings("unchecked")
+                public void run() {
+                    for (EventListener listener : matchedListeners)
+                        listener.handle(event);
+                }
+            }).start();
+            LOG.info("Listener triggered for event type `{}`. Sending 202 Accepted...", eventType.getName());
+            sendMessage(response, HttpServletResponse.SC_ACCEPTED,
+                    "The event is received. Registered listener for this event is found and is handling the event.");
+        } else {
+            LOG.info("No listener can be found for event type `{}`. Sending 204 No Content...", eventType.getName());
+            sendMessage(response, HttpServletResponse.SC_NO_CONTENT,
+                    "The event is received, but no registered listener for be found for this type of event.");
+        }
 
-        LOG.info("Listener triggered for event type `{}`. Sending 202 Accepted...", eventType.getName());
-        sendMessage(response, HttpServletResponse.SC_ACCEPTED,
-                "The event is received. Registered listener for this event is found and is handling the event.");
         baseRequest.setHandled(true);
     }
 

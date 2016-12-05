@@ -4,6 +4,17 @@ Github libraries for Java.
 
 ## Future Tasks
 
-- [ ] Write test cases for all existed classes.
+Module `core`:
+
 - [ ] Implement all Github entities.
+- [ ] Write test cases.
+
+Module `webhook`:
+
+- [ ] Implement `EventListener` dynamic registration for Java and Groovy files.
+
+Whole project:
+
 - [ ] Deploy to [https://jitpack.io/](https://jitpack.io/).
+- [ ] Add `webhook-servlet` module.
+- [ ] Implement `client` module with Retrofit.
