@@ -4,19 +4,6 @@ allprojects {
 
     group 'com.github4j'
     version '0.1-SNAPSHOT'
-
-    uploadArchives {
-        repositories {
-            mavenDeployer {
-                repository(url: "${releaseDeployUrl}") {
-                    authentication(userName: deployUsername, password: deployPassword)
-                }
-                snapshotRepository(url: "${snapshotDeployUrl}") {
-                    authentication(userName: deployUsername, password: deployPassword)
-                }
-            }
-        }
-    }
 }
 
 subprojects {
