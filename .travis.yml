@@ -3,9 +3,8 @@ jdk:
   - oraclejdk8
   - oraclejdk7
   - openjdk7
-sudo: required
-before_script:
-  - sudo chmod +x gradlew
+before_install:
+  - chmod +x gradlew
 script:
   - ./gradlew clean
   - ./gradlew test
