@@ -13,7 +13,7 @@ Module `webhook-standalone`:
 
 - [ ] Implement `EventListener` dynamic registration for Groovy scripts.
 - [ ] Implement `EventListener` dynamic registration for `.jar` files.
-- [ ] Add widly-used `EventListener` implementations.
+- [ ] Add common `EventListener` implementations.
 - [ ] Implement Groovy DSL for customized `EventListener` building.
 
 Whole project:

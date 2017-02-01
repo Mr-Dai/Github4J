@@ -83,10 +83,10 @@ public class GithubEventHandler extends AbstractHandler {
 
         // Extract payload
         String payload;
-        String receviedContentType = request.getHeader(CONTENT_TYPE_HEADER);
-        if (JSON_MEDIA_TYPE.equalsIgnoreCase(receviedContentType))
+        String receivedContentType = request.getHeader(CONTENT_TYPE_HEADER);
+        if (JSON_MEDIA_TYPE.equalsIgnoreCase(receivedContentType))
             payload = IOUtils.toString(request.getReader());
-        else if (FORM_MEDIA_TYPE.equalsIgnoreCase(receviedContentType)) {
+        else if (FORM_MEDIA_TYPE.equalsIgnoreCase(receivedContentType)) {
             String actualBody = IOUtils.toString(request.getReader());
             if (actualBody.startsWith("payload="))
                 payload = actualBody.substring(8);
@@ -98,7 +98,7 @@ public class GithubEventHandler extends AbstractHandler {
                 return;
             }
         } else {
-            LOG.info("Received invalid content type `{}`. Sending 406 Not Acceptable...", receviedContentType);
+            LOG.info("Received invalid content type `{}`. Sending 406 Not Acceptable...", receivedContentType);
             sendMessage(response, HttpServletResponse.SC_NOT_ACCEPTABLE,
                     "The received content type `" + request.getHeader(CONTENT_TYPE_HEADER) + "` is not acceptable.");
             baseRequest.setHandled(true);
@@ -142,7 +142,8 @@ public class GithubEventHandler extends AbstractHandler {
             return;
         }
         Class eventType = nameToEventClass.get(eventTypeStr);
-        if (!listeners.containsKey(eventType) || listeners.get(eventType).isEmpty()) {
+        final List<EventListener> matchedListeners = listeners.get(eventType);
+        if (matchedListeners == null || matchedListeners.isEmpty()) {
             LOG.info("No registered listener could be found for event type `{}`. Sending 204 No Content...", eventType.getName());
             sendMessage(response, HttpServletResponse.SC_NO_CONTENT,
                     "The event is received and recorded, but there is no registered listener for this event.");
@@ -162,30 +163,22 @@ public class GithubEventHandler extends AbstractHandler {
             return;
         }
 
-        final List<EventListener> matchedListeners = listeners.get(eventType);
-        if (matchedListeners != null && !matchedListeners.isEmpty()) {
-            new Thread(new Runnable() {
-                @Override
-                @SuppressWarnings("unchecked")
-                public void run() {
-                    for (EventListener listener : matchedListeners)
-                        listener.handle(event);
-                }
-            }).start();
-            LOG.info("Listener triggered for event type `{}`. Sending 202 Accepted...", eventType.getName());
-            sendMessage(response, HttpServletResponse.SC_ACCEPTED,
-                    "The event is received. Registered listener for this event is found and is handling the event.");
-        } else {
-            LOG.info("No listener can be found for event type `{}`. Sending 204 No Content...", eventType.getName());
-            sendMessage(response, HttpServletResponse.SC_NO_CONTENT,
-                    "The event is received, but no registered listener for be found for this type of event.");
-        }
-
+        new Thread(new Runnable() {
+            @Override
+            @SuppressWarnings("unchecked")
+            public void run() {
+                for (EventListener listener : matchedListeners)
+                    listener.handle(event);
+            }
+        }).start();
+        LOG.info("Listener triggered for event type `{}`. Sending 202 Accepted...", eventType.getName());
+        sendMessage(response, HttpServletResponse.SC_ACCEPTED,
+                "The event is received. Registered listener for this event is found and is handling the event.");
         baseRequest.setHandled(true);
     }
 
     private void sendMessage(HttpServletResponse response, int statusCode, String message) throws IOException {
-        response.setContentType("text/html; charset=utf-8");
+        response.setContentType("text/plain; charset=utf-8");
         response.setStatus(statusCode);
         PrintWriter out = response.getWriter();
         out.print(message);
