@@ -17,4 +17,12 @@ before_install:
 script:
   - ./gradlew clean
   - ./gradlew test
+  - ./gradlew codeCoverageReport
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
+
+notifications:
+  email: # only send an email if build fails
+    on_success: never
+    on_failure: always
 
