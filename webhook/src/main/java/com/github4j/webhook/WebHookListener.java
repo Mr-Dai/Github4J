@@ -1,9 +1,9 @@
 package com.github4j.webhook;
 
 import com.github4j.event.GithubEvent;
-import com.github4j.webhook.listener.EventListener;
 import com.github4j.webhook.handler.GithubEventHandler;
 import com.github4j.webhook.handler.LogHandler;
+import com.github4j.webhook.listener.EventListener;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.server.handler.HandlerCollection;
 import org.slf4j.Logger;
