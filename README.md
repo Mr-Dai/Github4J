@@ -1,5 +1,7 @@
 # Github4J
 
+[![Build Status](https://travis-ci.org/Mr-Dai/Github4J.svg?branch=master)](https://travis-ci.org/Mr-Dai/Github4J)
+
 Github libraries for Java.
 
 ## Future Tasks
