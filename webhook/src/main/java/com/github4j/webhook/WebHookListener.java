@@ -66,18 +66,14 @@ public class WebHookListener {
         server.stop();
     }
 
-    public <T extends GithubEvent> WebHookListener addListener(EventListener<? super T> listener) {
-        List<Class<? extends GithubEvent>> supportedEvents = listener.getSupportedEvents();
-        if (supportedEvents == null || supportedEvents.isEmpty())
-            throw new IllegalArgumentException("Result of `#getSupportedEvents()` of the given listener cannot be null or empty.");
-        for (Class<? extends GithubEvent> eventType : supportedEvents) {
-            if (!listeners.containsKey(eventType)) {
-                List<EventListener> newList = new LinkedList<>();
-                newList.add(listener);
-                listeners.put(eventType, newList);
-            } else
-                listeners.get(eventType).add(listener);
-        }
+    public <T extends GithubEvent> WebHookListener addListener(Class<T> listenEvent, EventListener<? super T> listener) {
+        Objects.requireNonNull(listenEvent, "Listen event type cannot be `null`.");
+        if (!listeners.containsKey(listenEvent)) {
+            List<EventListener> newList = new LinkedList<>();
+            newList.add(listener);
+            listeners.put(listenEvent, newList);
+        } else
+            listeners.get(listenEvent).add(listener);
         return this;
     }
 
